@@ -26,3 +26,25 @@ child to parent: using output decorator -->
 <!-- {{todaysDate | date: 'EEEE d MMMM y'}} -->
 <!-- {{todaysDate | date: 'EEEE d MMMM y' | uppercase}} -->
 <!-- {{'World' | greetingsPipe}} -->
+
+<!-- Property binding -->
+<!-- <img [src]="itemImageUrl"> -->
+
+<!-- confusão comum entre atributo colspan e a propriedade colSpan -->
+<!-- o certo é o abaixo. Caso contrário vai dar erro de interpolação caso use colspan="{{1+1}}" -->
+<!-- interpolação e property binding só seta propriedades e não atributos   -->
+<!-- <table>
+    <tr>
+        <td [colSpan]="1+1">Three-Four</td>
+    </tr>
+</table> -->
+
+<!-- outro exemplo -->
+<!-- <button [disabled]="isUnchanged">Disabled Button</button> -->
+
+<!-- interpolação 
+<p><img src="{{itemImageUrl}}" alt=""></p>
+-->
+<!-- prop binding 
+<p><img [src]="itemImageUrl" alt=""></p>
+-->
