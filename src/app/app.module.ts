@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 // template variable para variáveis em templates aninhados
+//também para ngModel
 import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';

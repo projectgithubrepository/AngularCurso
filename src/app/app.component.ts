@@ -1,10 +1,10 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
-})
+// @Component({
+//   selector: 'app-root',
+//   templateUrl: './app.component.html',
+//   styleUrls: ['./app.component.css']
+// })
 
 // binding attribute, class e style
 
@@ -106,6 +106,28 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 //   styleUrls: ['./app.component.css']
 // })
 
+
+//Directives
+@Component({
+  selector: 'app-root',
+  template: `
+    <!-- ngClass -->
+    <!-- <div [ngClass]="isSpecial ? 'special' : ''">Example</div> -->
+
+    <!-- to use ngClass with a method add a method to the component class 
+    no template add ngClass property binding a current class para setar os elementos-->
+    <!-- <div [ngClass]="currentClasses">Example</div> -->
+
+    <!-- ngStyle 
+    <div [ngStyle]="currentStyle">Example</div> -->
+
+    <!-- ngModel -->
+    <label for="example">{{name}}</label>
+    <input [(ngModel)]="name" id="example" />
+
+  `,
+  styleUrls: ['./app.component.css']
+})
 export class AppComponent {
   //first lesson
   // title = 'angular-video-series';
@@ -174,5 +196,76 @@ export class AppComponent {
   //é possível acessar variáveis em templates aninhados?
   //firstExample= '';
 
-  
+  //Directives
+  //ngClass
+
+  // isSpecial = true;
+  // ngOnInit() {
+  // }
+
+  //to use ngClass with a method add a method to the component class
+  // isSpecial = true;
+  // currentClasses = {};
+  // ngOnInit() {
+  //   this.setCurrentClasses();
+  // }
+
+  // setCurrentClasses() {
+  //   this.currentClasses = {
+  //     saveable: true,
+  //     modified: false,
+  //     special: true
+  //   }
+  // }
+
+  // //ngStyle
+  // isSpecial = true;
+  // currentClasses = {};
+  // currentStyle = {};
+
+  // ngOnInit() {
+  //   this.setCurrentClasses();
+  //   this.setCurrentStyle();
+  // }
+
+  // setCurrentClasses() {
+  //   this.currentClasses = {
+  //     saveable: true,
+  //     modified: false,
+  //     special: true
+  //   }
+  // }
+
+  // setCurrentStyle() {
+  //   this.currentStyle = {
+  //     'font-style': 'italic',
+  //     'font-weight': 'bold',
+  //   }
+  // }
+
+   //ngModel
+   isSpecial = true;
+   currentClasses = {};
+   currentStyle = {};
+   name = 'bob';
+ 
+   ngOnInit() {
+     this.setCurrentClasses();
+     this.setCurrentStyle();
+   }
+ 
+   setCurrentClasses() {
+     this.currentClasses = {
+       saveable: true,
+       modified: false,
+       special: true
+     }
+   }
+ 
+   setCurrentStyle() {
+     this.currentStyle = {
+       'font-style': 'italic',
+       'font-weight': 'bold',
+     }
+   }
 }
