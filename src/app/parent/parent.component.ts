@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { ChildComponent } from '../child/child.component';
 
 @Component({
   selector: 'app-parent',
@@ -7,8 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 //COMPONENTS COMMUNICATION 
 //1.binding 
-// parent to child: using input decorator
+// parent to child: using input decorator (nada nesse arquivo)
 
+
+// child to parent: using output decorator
 // export class ParentComponent implements OnInit {
 
 //   constructor() { }
@@ -21,15 +24,16 @@ import { Component, OnInit } from '@angular/core';
 
 // }
 
-// child to parent: using output decorator
+// child to parent: using viewchild
 export class ParentComponent implements OnInit {
-
-  constructor() { }
+  @ViewChild(ChildComponent) child:any;
+  constructor() {}
 
   ngOnInit(): void {}
 
-  receiveMessage(msg:any){
-    alert(msg);
+  ngAfterViewInit() {
+    alert(this.child?.message);
   }
 
 }
+
