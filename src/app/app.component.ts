@@ -1,10 +1,10 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
-})
+// @Component({
+//   selector: 'app-root',
+//   templateUrl: './app.component.html',
+//   styleUrls: ['./app.component.css']
+// })
 
 // binding attribute, class e style
 
@@ -62,6 +62,16 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 //   styleUrls: ['./app.component.css']
 // })
 
+//event binding
+@Component({
+  selector: 'app-root',
+  template: `
+    <!-- <button (click)="onSave()">Save</button> -->
+    <app-item-details (deleteRequest)="deleteItem($event)"></app-item-details>
+  `,
+  styleUrls: ['./app.component.css']
+})
+
 export class AppComponent {
   //first lesson
   // title = 'angular-video-series';
@@ -109,5 +119,14 @@ export class AppComponent {
   //class binding
   //uma classe
   // onSale = false;
+
+  //event binding
+  // onSave(){
+  //   console.log('click and save');
+  // }
+
+  deleteItem(item:any){
+    console.log(item)
+  }
 
 }
