@@ -1,10 +1,10 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
-// @Component({
-//   selector: 'app-root',
-//   templateUrl: './app.component.html',
-//   styleUrls: ['./app.component.css']
-// })
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
 
 // binding attribute, class e style
 
@@ -63,14 +63,14 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 // })
 
 //event binding
-@Component({
-  selector: 'app-root',
-  template: `
-    <!-- <button (click)="onSave()">Save</button> -->
-    <app-item-details (deleteRequest)="deleteItem($event)"></app-item-details>
-  `,
-  styleUrls: ['./app.component.css']
-})
+// @Component({
+//   selector: 'app-root',
+//   template: `
+//     <!-- <button (click)="onSave()">Save</button> -->
+//     <app-item-details (deleteRequest)="deleteItem($event)"></app-item-details>
+//   `,
+//   styleUrls: ['./app.component.css']
+// })
 
 export class AppComponent {
   //first lesson
@@ -125,8 +125,11 @@ export class AppComponent {
   //   console.log('click and save');
   // }
 
-  deleteItem(item:any){
-    console.log(item)
-  }
+  // deleteItem(item:any){
+  //   console.log(item)
+  // }
+
+  //two-way binding
+  fontSizepx = 16;
 
 }

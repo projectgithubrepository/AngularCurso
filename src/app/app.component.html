@@ -48,3 +48,12 @@ child to parent: using output decorator -->
 <!-- prop binding 
 <p><img [src]="itemImageUrl" alt=""></p>
 -->
+
+<!-- two-way binding 
+<app-app-sizer [(size)]="fontSizepx"></app-app-sizer>
+<div [style.font-size.px]="fontSizepx">Resizible text</div>
+-->
+
+<!-- two-way binding 
+    é combinação reduzida entre property binding ( [size]="fontSizepx" ) e event binding ( (sizeChange)="fontSizepx" ) -->
+<app-app-sizer [size]="fontSizepx" (sizeChange)="fontSizepx"></app-app-sizer>
