@@ -35,8 +35,16 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 // }
 
 // child to parent: using viewchild
+// export class ChildComponent implements OnInit {
+//   message = 'message from child!';
+
+//   constructor() { }
+
+//   ngOnInit(): void {}
+
+// }
+
 export class ChildComponent implements OnInit {
-  message = 'message from child!';
 
   constructor() { }
 
