@@ -25,15 +25,21 @@ import { ChildComponent } from '../child/child.component';
 // }
 
 // child to parent: using viewchild
+// export class ParentComponent implements OnInit {
+//   @ViewChild(ChildComponent) child:any;
+//   constructor() {}
+
+//   ngOnInit(): void {}
+
+//   ngAfterViewInit() {
+//     alert(this.child?.message);
+//   }
+
+// }
+
 export class ParentComponent implements OnInit {
-  @ViewChild(ChildComponent) child:any;
   constructor() {}
 
   ngOnInit(): void {}
 
-  ngAfterViewInit() {
-    alert(this.child?.message);
-  }
-
 }
-
