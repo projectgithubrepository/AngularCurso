@@ -40,4 +40,8 @@ export class AppComponent {
   //   this.showText = !this.showText;
   // console.log(event);
   // }
+
+  //Pipes (datepipe, uppercasepipe, currencypipe, percentpipe etc)
+  todaysDate = new Date;
+  
 }
