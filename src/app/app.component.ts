@@ -1,10 +1,10 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
-// @Component({
-//   selector: 'app-root',
-//   templateUrl: './app.component.html',
-//   styleUrls: ['./app.component.css']
-// })
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
 
 // binding attribute, class e style
 
@@ -86,25 +86,25 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 //é possível acessar variáveis em templates aninhados?
 // um template input consegue acessar variáveis que um template externo define
 //no exemplo abaixo mudando o texto no input muda o texto no span, pq o angular de imediato atualiza o estado no template variable ref1
-@Component({
-  selector: 'app-root',
-  template: `
-   <!-- nesse exemplo tem um template implícito em volta do span e a definição da variável é fora do span -->
-    <input #ref1 type="text" [(ngModel)]="firstExample"/>
+// @Component({
+//   selector: 'app-root',
+//   template: `
+//    <!-- nesse exemplo tem um template implícito em volta do span e a definição da variável é fora do span -->
+//     <input #ref1 type="text" [(ngModel)]="firstExample"/>
 
-    <span *ngIf="true">{{ref1.value}}</span>
+//     <span *ngIf="true">{{ref1.value}}</span>
 
-    <!-- é o mesmo que explicitamente fazer o binding como abaixo:
-    Porém acessar o template variable de fora do parent template não funciona  
+//     <!-- é o mesmo que explicitamente fazer o binding como abaixo:
+//     Porém acessar o template variable de fora do parent template não funciona  
     
-    <ng-template [ngIf]="true">
-      <span>{{ref1.value}}</span>
-    </ng-template> 
-  -->
+//     <ng-template [ngIf]="true">
+//       <span>{{ref1.value}}</span>
+//     </ng-template> 
+//   -->
 
-  `,
-  styleUrls: ['./app.component.css']
-})
+//   `,
+//   styleUrls: ['./app.component.css']
+// })
 
 export class AppComponent {
   //first lesson
@@ -171,5 +171,8 @@ export class AppComponent {
   //   console.log(phone);
   // }
 
-  firstExample= '';
+  //é possível acessar variáveis em templates aninhados?
+  //firstExample= '';
+
+  
 }
