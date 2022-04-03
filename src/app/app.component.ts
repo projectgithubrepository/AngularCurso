@@ -32,4 +32,12 @@ export class AppComponent {
   //   }
   //   return b;
   // }
+
+  //template statement
+  // showText = false;
+
+  // toggleText(event): void {
+  //   this.showText = !this.showText;
+  // console.log(event);
+  // }
 }

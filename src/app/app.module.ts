@@ -12,7 +12,7 @@ import { ChildComponent } from './child/child.component';
     AppComponent,
     HelloWorldComponent,
     ParentComponent,
-    ChildComponent
+    ChildComponent,
   ],
   imports: [
     BrowserModule,
