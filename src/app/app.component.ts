@@ -108,26 +108,40 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 
 
 //Directives
+// @Component({
+//   selector: 'app-root',
+//   template: `
+//     <!-- ngClass -->
+//     <!-- <div [ngClass]="isSpecial ? 'special' : ''">Example</div> -->
+
+//     <!-- to use ngClass with a method add a method to the component class 
+//     no template add ngClass property binding a current class para setar os elementos-->
+//     <!-- <div [ngClass]="currentClasses">Example</div> -->
+
+//     <!-- ngStyle 
+//     <div [ngStyle]="currentStyle">Example</div> -->
+
+//     <!-- ngModel -->
+//     <label for="example">{{name}}</label>
+//     <input [(ngModel)]="name" id="example" />
+
+//   `,
+//   styleUrls: ['./app.component.css']
+// })
+
+
+//Attribute directives 
 @Component({
   selector: 'app-root',
   template: `
-    <!-- ngClass -->
-    <!-- <div [ngClass]="isSpecial ? 'special' : ''">Example</div> -->
-
-    <!-- to use ngClass with a method add a method to the component class 
-    no template add ngClass property binding a current class para setar os elementos-->
-    <!-- <div [ngClass]="currentClasses">Example</div> -->
-
-    <!-- ngStyle 
-    <div [ngStyle]="currentStyle">Example</div> -->
-
-    <!-- ngModel -->
-    <label for="example">{{name}}</label>
-    <input [(ngModel)]="name" id="example" />
-
+    <!-- estático 
+    <p appHighlight>Test</p> -->
+    <!-- dinâmico -->
+    <p [appHighlight]="'red'">Test</p>
   `,
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
   //first lesson
   // title = 'angular-video-series';
