@@ -14,6 +14,10 @@ import { ItemDetailsComponent } from './item-details/item-details.component';
 import { AppSizerComponent } from './app-sizer/app-sizer.component';
 import { HighlightDirective } from './highlight.directive';
 import { LogService } from './log.service';
+import { FirstComponent } from './first/first.component';
+import { SecondComponent } from './second/second.component';
+import { ChildAComponent } from './child-a/child-a.component';
+import { ChildBComponent } from './child-b/child-b.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,11 @@ import { LogService } from './log.service';
     GreetingsPipePipe,
     ItemDetailsComponent,
     AppSizerComponent,
-    HighlightDirective
+    HighlightDirective,
+    FirstComponent,
+    SecondComponent,
+    ChildAComponent,
+    ChildBComponent
   ],
   imports: [
     BrowserModule,

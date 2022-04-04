@@ -168,9 +168,26 @@ import { LogService } from './log.service';
 // })
 
 //Dependency Injection
+// @Component({
+//   selector: 'app-root',
+//   template: `<h1>Hello World</h1>`,
+//   styleUrls: ['./app.component.css']
+// })
+
+//Routes
 @Component({
   selector: 'app-root',
-  template: `<h1>Hello World</h1>`,
+  template: `
+    <h1>Angular router app</h1>
+
+    <nav>
+      <ul>
+        <li><a routerLink="/first-component/1">First Component</a></li>
+        <li><a routerLink="/second-component">Second Component</a></li>
+      </ul>
+    </nav>
+    <router-outlet></router-outlet>
+  `,
   styleUrls: ['./app.component.css']
 })
 
@@ -338,12 +355,19 @@ export class AppComponent {
   // }
 
   //exemplo 2 inserindo a lib renderer2 module
-  constructor(private LogService: LogService,
-    private renderer: Renderer2,
-    private host: ElementRef) {}
+  // constructor(private LogService: LogService,
+  //   private renderer: Renderer2,
+  //   private host: ElementRef) {}
+
+  // ngOnInit() {
+  //   this.LogService.logMessage('Hello World');
+  //   this.renderer.setStyle(this.host.nativeElement, 'color', 'red');
+  // }
+
+  //Routes
+  constructor(){}
 
   ngOnInit() {
-    this.LogService.logMessage('Hello World');
-    this.renderer.setStyle(this.host.nativeElement, 'color', 'red');
+
   }
 }
