@@ -13,6 +13,7 @@ import { GreetingsPipePipe } from './greetings-pipe.pipe';
 import { ItemDetailsComponent } from './item-details/item-details.component';
 import { AppSizerComponent } from './app-sizer/app-sizer.component';
 import { HighlightDirective } from './highlight.directive';
+import { LogService } from './log.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { HighlightDirective } from './highlight.directive';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [LogService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
