@@ -1,4 +1,5 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Renderer2, ElementRef } from '@angular/core';
+import { LogService } from './log.service';
 
 // @Component({
 //   selector: 'app-root',
@@ -143,26 +144,33 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 // })
 
 //Structural Directives
+// @Component({
+//   selector: 'app-root',
+//   template: `
+//     <!-- ngIf 
+//     <div *ngIf="isActive">Active</div>-->
+
+//     <!-- ngFor 
+//     for puro
+//     <div *ngFor="let item of items">{{item.name}}</div> -->
+//     <!--  
+//     for puxando o index 
+//     <div *ngFor="let item of items; let i = index">{{i}} - {{item.name}}</div> -->
+
+//     <!-- ngSwitch (ngSwitch, ngSwitchCase e ngSwitchDefault)-->
+//     <div [ngSwitch]="item.name">
+//       <div *ngSwitchCase="'Bob'">Hi dad</div> 
+//       <div *ngSwitchCase="'Monica'">Hi mom</div>
+//       <div *ngSwitchDefault>Hi friend</div>
+//     </div>  
+//   `,
+//   styleUrls: ['./app.component.css']
+// })
+
+//Dependency Injection
 @Component({
   selector: 'app-root',
-  template: `
-    <!-- ngIf 
-    <div *ngIf="isActive">Active</div>-->
-
-    <!-- ngFor 
-    for puro
-    <div *ngFor="let item of items">{{item.name}}</div> -->
-    <!--  
-    for puxando o index 
-    <div *ngFor="let item of items; let i = index">{{i}} - {{item.name}}</div> -->
-
-    <!-- ngSwitch (ngSwitch, ngSwitchCase e ngSwitchDefault)-->
-    <div [ngSwitch]="item.name">
-      <div *ngSwitchCase="'Bob'">Hi dad</div> 
-      <div *ngSwitchCase="'Monica'">Hi mom</div>
-      <div *ngSwitchDefault>Hi friend</div>
-    </div>  
-  `,
+  template: `<h1>Hello World</h1>`,
   styleUrls: ['./app.component.css']
 })
 
@@ -319,5 +327,23 @@ export class AppComponent {
   // ]
 
   // ngSwitch (ngSwitch, ngSwitchCase e ngSwitchDefault)
-  item = { name: 'Bob'};
+  // item = { name: 'Bob'};
+  
+  //Dependency Injection
+  //exemplo 1
+  // constructor(private LogService: LogService) {}
+
+  // ngOnInit() {
+  //   this.LogService.logMessage('Hello World');
+  // }
+
+  //exemplo 2 inserindo a lib renderer2 module
+  constructor(private LogService: LogService,
+    private renderer: Renderer2,
+    private host: ElementRef) {}
+
+  ngOnInit() {
+    this.LogService.logMessage('Hello World');
+    this.renderer.setStyle(this.host.nativeElement, 'color', 'red');
+  }
 }
