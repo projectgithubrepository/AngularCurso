@@ -131,13 +131,37 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 
 
 //Attribute directives 
+// @Component({
+//   selector: 'app-root',
+//   template: `
+//     <!-- estático 
+//     <p appHighlight>Test</p> -->
+//     <!-- dinâmico -->
+//     <p [appHighlight]="'red'">Test</p>
+//   `,
+//   styleUrls: ['./app.component.css']
+// })
+
+//Structural Directives
 @Component({
   selector: 'app-root',
   template: `
-    <!-- estático 
-    <p appHighlight>Test</p> -->
-    <!-- dinâmico -->
-    <p [appHighlight]="'red'">Test</p>
+    <!-- ngIf 
+    <div *ngIf="isActive">Active</div>-->
+
+    <!-- ngFor 
+    for puro
+    <div *ngFor="let item of items">{{item.name}}</div> -->
+    <!--  
+    for puxando o index 
+    <div *ngFor="let item of items; let i = index">{{i}} - {{item.name}}</div> -->
+
+    <!-- ngSwitch (ngSwitch, ngSwitchCase e ngSwitchDefault)-->
+    <div [ngSwitch]="item.name">
+      <div *ngSwitchCase="'Bob'">Hi dad</div> 
+      <div *ngSwitchCase="'Monica'">Hi mom</div>
+      <div *ngSwitchDefault>Hi friend</div>
+    </div>  
   `,
   styleUrls: ['./app.component.css']
 })
@@ -258,28 +282,42 @@ export class AppComponent {
   // }
 
    //ngModel
-   isSpecial = true;
-   currentClasses = {};
-   currentStyle = {};
-   name = 'bob';
+  //  isSpecial = true;
+  //  currentClasses = {};
+  //  currentStyle = {};
+  //  name = 'bob';
  
-   ngOnInit() {
-     this.setCurrentClasses();
-     this.setCurrentStyle();
-   }
+  //  ngOnInit() {
+  //    this.setCurrentClasses();
+  //    this.setCurrentStyle();
+  //  }
  
-   setCurrentClasses() {
-     this.currentClasses = {
-       saveable: true,
-       modified: false,
-       special: true
-     }
-   }
+  //  setCurrentClasses() {
+  //    this.currentClasses = {
+  //      saveable: true,
+  //      modified: false,
+  //      special: true
+  //    }
+  //  }
  
-   setCurrentStyle() {
-     this.currentStyle = {
-       'font-style': 'italic',
-       'font-weight': 'bold',
-     }
-   }
+  //  setCurrentStyle() {
+  //    this.currentStyle = {
+  //      'font-style': 'italic',
+  //      'font-weight': 'bold',
+  //    }
+  //  }
+
+  //Structural Directives
+  //ngIf
+  // isActive = true;
+
+  //ngFor
+  // items = [
+  //   { name: 'Bob'},
+  //   { name: 'John'},
+  //   { name: 'Monica'}
+  // ]
+
+  // ngSwitch (ngSwitch, ngSwitchCase e ngSwitchDefault)
+  item = { name: 'Bob'};
 }
