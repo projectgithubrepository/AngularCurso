@@ -56,4 +56,33 @@ child to parent: using output decorator -->
 
 <!-- two-way binding 
     é combinação reduzida entre property binding ( [size]="fontSizepx" ) e event binding ( (sizeChange)="fontSizepx" ) -->
-<app-app-sizer [size]="fontSizepx" (sizeChange)="fontSizepx"></app-app-sizer>
+<!-- <app-app-sizer [size]="fontSizepx" (sizeChange)="fontSizepx"></app-app-sizer> -->
+
+<!-- Template driven forms -->
+<!-- <p>{{model | json}}</p> -->
+<div [hidden]="submited">
+    <form #petForm="ngForm" (ngSubmit)="onSubmit()">
+        <div>
+            <label for="name"></label>
+            <Input type="text" 
+            id="name"
+            required
+            [(ngModel)]='model.name'
+            name="name"
+            />
+        </div>
+        <div>
+            <label for="specie"></label>
+            <select id="specie" required [(ngModel)]='model.specie' name="specie">
+                <option *ngFor="let specie of species" [value]="specie">{{specie}}</option>
+            </select>
+        </div>
+        <button [disabled]="!petForm.form.valid" type="submit">Submit</button>
+    </form>
+</div>
+<div [hidden]="!submited">
+    <h2>You submited:</h2>
+    <p>Name: {{model.name}}</p>
+    <p>Specie: {{model.specie}}</p>
+    <button (click)="submited = false">Edit</button>
+</div>

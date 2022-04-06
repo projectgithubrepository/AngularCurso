@@ -1,5 +1,7 @@
 import { Component, OnInit, OnDestroy, Renderer2, ElementRef } from '@angular/core';
 import { LogService } from './log.service';
+// Template driven form
+import { Pet } from './pet.model';
 
 // @Component({
 //   selector: 'app-root',
@@ -175,19 +177,26 @@ import { LogService } from './log.service';
 // })
 
 //Routes
+// @Component({
+//   selector: 'app-root',
+//   template: `
+//     <h1>Angular router app</h1>
+
+//     <nav>
+//       <ul>
+//         <li><a routerLink="/first-component/1">First Component</a></li>
+//         <li><a routerLink="/second-component">Second Component</a></li>
+//       </ul>
+//     </nav>
+//     <router-outlet></router-outlet>
+//   `,
+//   styleUrls: ['./app.component.css']
+// })
+
+// Template driven form
 @Component({
   selector: 'app-root',
-  template: `
-    <h1>Angular router app</h1>
-
-    <nav>
-      <ul>
-        <li><a routerLink="/first-component/1">First Component</a></li>
-        <li><a routerLink="/second-component">Second Component</a></li>
-      </ul>
-    </nav>
-    <router-outlet></router-outlet>
-  `,
+  templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 
@@ -365,9 +374,16 @@ export class AppComponent {
   // }
 
   //Routes
-  constructor(){}
+  // constructor(){}
 
-  ngOnInit() {
+  // ngOnInit() {}
 
+  // Template driven form
+  species = ['fish','cat','dog'];
+  model = new Pet(1, 'Goldie', this.species[0]);
+  submited = false;
+
+  onSubmit() {
+    this.submited = true;
   }
 }
