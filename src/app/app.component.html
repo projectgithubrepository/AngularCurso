@@ -60,7 +60,7 @@ child to parent: using output decorator -->
 
 <!-- Template driven forms -->
 <!-- <p>{{model | json}}</p> -->
-<div [hidden]="submited">
+<!-- <div [hidden]="submited">
     <form #petForm="ngForm" (ngSubmit)="onSubmit()">
         <div>
             <label for="name"></label>
@@ -85,4 +85,22 @@ child to parent: using output decorator -->
     <p>Name: {{model.name}}</p>
     <p>Specie: {{model.specie}}</p>
     <button (click)="submited = false">Edit</button>
-</div>
+</div> -->
+
+
+<!-- Reactive forms -->
+<!-- <label for="name">Name:</label>
+<input id="name" type="text" [formControl]="name"/>
+<p>value: {{name.value}}</p>
+<p>
+    <button (click)="updateName()">UpdateName</button>
+</p> -->
+
+<!-- formGroup -->
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <label for="first-name">First Name</label>
+    <input id="first-name" type="text" formControlName="firstName">
+    <label for="last-name">Last Name</label>
+    <input id="last-name" type="text" formControlName="lastName">
+    <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+</form>

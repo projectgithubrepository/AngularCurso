@@ -1,4 +1,5 @@
 import { Component, OnInit, OnDestroy, Renderer2, ElementRef } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
 import { LogService } from './log.service';
 // Template driven form
 import { Pet } from './pet.model';
@@ -379,11 +380,28 @@ export class AppComponent {
   // ngOnInit() {}
 
   // Template driven form
-  species = ['fish','cat','dog'];
-  model = new Pet(1, 'Goldie', this.species[0]);
-  submited = false;
+  // species = ['fish','cat','dog'];
+  // model = new Pet(1, 'Goldie', this.species[0]);
+  // submited = false;
+
+  // onSubmit() {
+  //   this.submited = true;
+  // }
+
+  //Reactive Forms
+  // name = new FormControl('');
+
+  // updateName() {
+  //   this.name.setValue('Nancy');
+  // }
+
+  //form group
+  profileForm = new FormGroup({
+    firstName: new FormControl(''),
+    lastName: new FormControl(''),
+  })
 
   onSubmit() {
-    this.submited = true;
+    console.warn(this.profileForm.value);
   }
 }
