@@ -1,5 +1,9 @@
 # AngularVideoSeries
 
+Tutorial with lots of relevant Angular Framework content! 
+
+Access the commit list for more details.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
 
 ## Development server
