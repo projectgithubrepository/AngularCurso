@@ -97,10 +97,49 @@ child to parent: using output decorator -->
 </p> -->
 
 <!-- formGroup -->
-<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+<!-- <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
     <label for="first-name">First Name</label>
     <input id="first-name" type="text" formControlName="firstName">
     <label for="last-name">Last Name</label>
     <input id="last-name" type="text" formControlName="lastName">
     <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+</form> -->
+
+<!-- Form validation -->
+<!-- <form action="">
+    <input 
+        type="text" 
+        name="name" 
+        required 
+        minlength="4" 
+        [(ngModel)]="nameInput" 
+        #name="ngModel"
+    />
+    <div *ngIf="name.invalid && (name.dirty || name.touched)">
+        <div *ngIf="name.errors?.['required']">
+            Name is required.
+        </div>
+        <div *ngIf="name.errors?.['minlength']">
+            Name must be at least 4 characters long.
+        </div>
+    </div>
+</form> -->
+
+<!-- usando validationForm + get Name -->
+<form [formGroup]="validationForm">
+    <input 
+        type="text" 
+        name="name" 
+        required 
+        minlength="4" 
+        formControlName="name"
+    />
+    <div *ngIf="name?.invalid && (name?.dirty || name?.touched)">
+        <div *ngIf="name?.errors?.['required']">
+            Name is required.
+        </div>
+        <div *ngIf="name?.errors?.['minlength']">
+            Name must be at least 4 characters long.
+        </div>
+    </div>
 </form>

@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy, Renderer2, ElementRef } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { LogService } from './log.service';
 // Template driven form
 import { Pet } from './pet.model';
@@ -396,12 +396,26 @@ export class AppComponent {
   // }
 
   //form group
-  profileForm = new FormGroup({
-    firstName: new FormControl(''),
-    lastName: new FormControl(''),
-  })
+  // profileForm = new FormGroup({
+  //   firstName: new FormControl(''),
+  //   lastName: new FormControl(''),
+  // })
 
-  onSubmit() {
-    console.warn(this.profileForm.value);
+  // onSubmit() {
+  //   console.warn(this.profileForm.value);
+  // }
+
+  //Form validation
+  nameInput = '';
+
+  validationForm = new FormGroup({
+    name: new FormControl(this.nameInput, [
+      Validators.required,
+      Validators.minLength(4)
+    ])
+  });
+
+  get name() {
+    return this.validationForm.get('name');
   }
 }
