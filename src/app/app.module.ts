@@ -4,6 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 //também para ngModel
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { HttpClientModule } from '@angular/common/http'
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HelloWorldComponent } from './hello-world.component';
@@ -38,7 +40,8 @@ import { ChildBComponent } from './child-b/child-b.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [LogService],
   bootstrap: [AppComponent]

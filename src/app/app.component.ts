@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy, Renderer2, ElementRef } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { DataService } from './data.service';
 import { LogService } from './log.service';
 // Template driven form
 import { Pet } from './pet.model';
@@ -406,16 +407,26 @@ export class AppComponent {
   // }
 
   //Form validation
-  nameInput = '';
+  // nameInput = '';
 
-  validationForm = new FormGroup({
-    name: new FormControl(this.nameInput, [
-      Validators.required,
-      Validators.minLength(4)
-    ])
-  });
+  // validationForm = new FormGroup({
+  //   name: new FormControl(this.nameInput, [
+  //     Validators.required,
+  //     Validators.minLength(4)
+  //   ])
+  // });
 
-  get name() {
-    return this.validationForm.get('name');
+  // get name() {
+  //   return this.validationForm.get('name');
+  // }
+
+  //HTTP Client
+  constructor(private dataService: DataService) {}
+
+  ngOnInit() {
+
+    this.dataService.getData().subscribe((res) => {
+      console.log(res);
+    });
   }
 }
